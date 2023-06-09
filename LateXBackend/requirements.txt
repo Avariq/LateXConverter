@@ -1,0 +1,6 @@
+Django
+waitress
+validators
+openai
+django-cors-headers
+ultralytics
