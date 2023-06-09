@@ -3,7 +3,7 @@
 ## Short Description
 This project uses YOLOv8 model trained on Aida public dataset (70000 images out of 100000) to detect and classify handwritten math charachters in order to convert them to LateX string.
 
-![image](https://github.com/Avariq/LateXConverter/assets/48154142/d8445161-0543-450c-b514-c209eab762b0)
+![image](https://github.com/Avariq/LateXConverter/assets/48154142/3eb3b7c9-ca38-4acc-acb8-4a2602e7b0b0)
 
 ## Training
 Every batch (10000 images) was iterated for 12 times (epochs) to achieve better precision/recall scores.
@@ -27,8 +27,9 @@ See [Detection Docs](https://docs.ultralytics.com/tasks/detect/) for usage examp
 
   
 ## Model performance
-![results](https://github.com/Avariq/LateXConverter/assets/48154142/cb1965b4-9eb3-4387-bd73-02a7ef38736e)
-![F1_curve (1)](https://github.com/Avariq/LateXConverter/assets/48154142/8ca2b9a2-516d-4c36-b64e-e3a4ac1a8141)
+![results](https://github.com/Avariq/LateXConverter/assets/48154142/5ca8a985-a2a0-4d7a-9bf1-f98fa8747e96)
+![F1_curve (1)](https://github.com/Avariq/LateXConverter/assets/48154142/6171e173-56e2-49fa-bc57-7c3538eaeea2)
+
   
 ## Dataset
 
@@ -38,8 +39,8 @@ The Aida Calculus Math Handwriting Recognition Dataset consists of 100,000 image
 
 Each image is accompanied by ground truth math expression in LaTeX as well as bounding boxes and pixel-level masks per character. All images are synthetically generated.
   
-  
-![train_batch0](https://github.com/Avariq/LateXConverter/assets/48154142/0a731c1f-a4d2-4b8a-8c78-6c5c8244c69b)
+  ![train_batch0](https://github.com/Avariq/LateXConverter/assets/48154142/79a12e34-ced6-4fec-bcb8-bd0ff9a7fc66)
+
   
 ### Aida structure
   
@@ -120,13 +121,13 @@ Firstly, create an environment and install all the requirements from requirement
 After all the requirements are successfully installed you will have to start the API by invoking ```python manage.py runserver```<br>
 You should see the following output: <br>
   
-  ![image](https://github.com/Avariq/LateXConverter/assets/48154142/2fed0bb1-946d-429f-a20b-0c56bb149ea8)
+  ![image](https://github.com/Avariq/LateXConverter/assets/48154142/9b047f85-2d48-4283-a611-6813f65ae620)
   
 ```Don't close the terminal while using API```
   
-Next step is to open ```LateXConverter\front\index.html``` file and use the UI to perform converting<br>
+Next step is to open ```LateXConverter\front\index.html``` file and use the UI to perform the converting<br>
   
-  ![image](https://github.com/Avariq/LateXConverter/assets/48154142/b73d4953-4a56-4681-b6bd-207097a8ea92)
+  ![image](https://github.com/Avariq/LateXConverter/assets/48154142/f19ee688-a2d5-4ddc-a3f7-1c03f67318e7)
 
 ## How to train YOLOv8
   
@@ -136,13 +137,14 @@ In case you would want to train your own YOLOv8 model and afterwards replace our
   
 ```Hint``` You can find the sample images [here](LateXBackend/res_f)
 ### Test 1
-  ![Untitled](https://github.com/Avariq/LateXConverter/assets/48154142/5ba2432c-c274-4b55-820f-12e1036cba32) <br>
+  <br>
+  ![Untitled](https://github.com/Avariq/LateXConverter/assets/48154142/02fdfe95-8731-4bd3-99f0-108361138e0e)
 ```RESULTS: 1 + 2 + 3 - 4 = 9```
   
 ### Test 2
-  ![Untitled2](https://github.com/Avariq/LateXConverter/assets/48154142/5128f569-e5a9-457c-ac4e-8da06d36284c)
+  ![Untitled2](https://github.com/Avariq/LateXConverter/assets/48154142/b5725cfb-e5ad-4758-a1f9-2c5d8bead925)
 ```RESULTS: 2 4 \cdot \left( x + y \right) = \cos x```
   
 ### Test 3
-  ![Untitled3](https://github.com/Avariq/LateXConverter/assets/48154142/3257dfba-4859-48dc-a4a1-a3364606beab)
+  ![Untitled3](https://github.com/Avariq/LateXConverter/assets/48154142/1c3e7e8d-b905-4352-b084-e380436b0d52)
 ```RESULTS: \sin \left( x \right) + \cos \left( y \right) = 1```
