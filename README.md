@@ -117,7 +117,7 @@ We have made a web-based static UI with Django API backend to provide better use
 Firstly, create an environment and install all the requirements from requirements.txt via ```pip install -r requirements.txt```
   
 After all the requirements are successfully installed you will have to start the API by invoking ```python manage.py runserver```
-You have to see the following output:
+You should see the following output: <br>
   ![image](https://github.com/Avariq/LateXConverter/assets/48154142/2fed0bb1-946d-429f-a20b-0c56bb149ea8)
   
 ```Don't close the terminal while using API```
@@ -126,3 +126,6 @@ Next step is to open ```LateXConverter\front\index.html``` file and use the UI t
   
   ![image](https://github.com/Avariq/LateXConverter/assets/48154142/b73d4953-4a56-4681-b6bd-207097a8ea92)
 
+## How to train YOLOv8
+  
+In case you would want to train your own YOLOv8 model and afterward replace our ```bestYolov8.pt``` weights with your own just follow the notebook 
