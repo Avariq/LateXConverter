@@ -113,16 +113,18 @@ We have made a web-based static UI with Django API backend to provide better use
   
   
 ## How to use
+Step 0: move inside the [backend directory](LateXBackend)
   
 Firstly, create an environment and install all the requirements from requirements.txt via ```pip install -r requirements.txt```
   
-After all the requirements are successfully installed you will have to start the API by invoking ```python manage.py runserver```
+After all the requirements are successfully installed you will have to start the API by invoking ```python manage.py runserver```<br>
 You should see the following output: <br>
+  
   ![image](https://github.com/Avariq/LateXConverter/assets/48154142/2fed0bb1-946d-429f-a20b-0c56bb149ea8)
   
 ```Don't close the terminal while using API```
   
-Next step is to open ```LateXConverter\front\index.html``` file and use the UI to perform converting
+Next step is to open ```LateXConverter\front\index.html``` file and use the UI to perform converting<br>
   
   ![image](https://github.com/Avariq/LateXConverter/assets/48154142/b73d4953-4a56-4681-b6bd-207097a8ea92)
 
@@ -132,4 +134,15 @@ In case you would want to train your own YOLOv8 model and afterwards replace our
   
 ## Examples
   
-```Hint``` You can find the sample images [here]()
+```Hint``` You can find the sample images [here](LateXBackend/res_f)
+### Test 1
+  ![Untitled](https://github.com/Avariq/LateXConverter/assets/48154142/5ba2432c-c274-4b55-820f-12e1036cba32) <br>
+```RESULTS: 1 + 2 + 3 - 4 = 9```
+  
+### Test 2
+  ![Untitled2](https://github.com/Avariq/LateXConverter/assets/48154142/5128f569-e5a9-457c-ac4e-8da06d36284c)
+```RESULTS: 2 4 \cdot \left( x + y \right) = \cos x```
+  
+### Test 3
+  ![Untitled3](https://github.com/Avariq/LateXConverter/assets/48154142/3257dfba-4859-48dc-a4a1-a3364606beab)
+```RESULTS: \sin \left( x \right) + \cos \left( y \right) = 1```
