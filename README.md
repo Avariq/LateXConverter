@@ -137,8 +137,7 @@ In case you would want to train your own YOLOv8 model and afterwards replace our
   
 ```Hint``` You can find the sample images [here](LateXBackend/res_f)
 ### Test 1
-  <br>
-  ![Untitled](https://github.com/Avariq/LateXConverter/assets/48154142/02fdfe95-8731-4bd3-99f0-108361138e0e)
+  ![Untitled](https://github.com/Avariq/LateXConverter/assets/48154142/b8e04170-bfdb-4f5b-8f23-8a21348d68d6)
 ```RESULTS: 1 + 2 + 3 - 4 = 9```
   
 ### Test 2
