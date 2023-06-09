@@ -1,14 +1,30 @@
 import shutil
 import os
 import json
+import argparse
 
-init_dataset_path = 'D:/YOLOFormatConverter/AidaDS'  # absolute path to a folder with DS
+parser = argparse.ArgumentParser(prog='AidaToYoloConverter')
 
-dest_dataset_path = 'D:/YOLOFormatConverter/AidaDSYolov8XS'
+parser.add_argument('-in_ds_path', dest='init_dataset_path', required=True)
+parser.add_argument('-out_ds_path', dest='dest_dataset_path', required=True)
+parser.add_argument('-train_perc', dest='train_perc', required=True, type=float)
+
+# init_dataset_path = 'D:/YOLOFormatConverter/AidaDS'  # absolute path to a folder with DS
+#
+# dest_dataset_path = 'D:/YOLOFormatConverter/AidaDSYolov8XS'
+# dest_dataset_train_path = f'{dest_dataset_path}/train'
+# dest_dataset_valid_path = f'{dest_dataset_path}/valid'
+
+
+args = parser.parse_args()
+
+init_dataset_path = args.init_dataset_path  # absolute path to a folder with DS
+
+dest_dataset_path = args.dest_dataset_path
 dest_dataset_train_path = f'{dest_dataset_path}/train'
 dest_dataset_valid_path = f'{dest_dataset_path}/valid'
 
-train_perc = 0.8
+train_perc = args.train_perc
 
 if not os.path.exists(dest_dataset_train_path):
 	os.mkdir(dest_dataset_train_path)
