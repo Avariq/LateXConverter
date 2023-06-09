@@ -8,6 +8,7 @@ parser = argparse.ArgumentParser(prog='AidaToYoloConverter')
 parser.add_argument('-in_ds_path', dest='init_dataset_path', required=True)
 parser.add_argument('-out_ds_path', dest='dest_dataset_path', required=True)
 parser.add_argument('-train_perc', dest='train_perc', required=True, type=float)
+parser.add_argument('-batches', dest='batches_to_convert', nargs='+', required=True)
 
 # init_dataset_path = 'D:/YOLOFormatConverter/AidaDS'  # absolute path to a folder with DS
 #
@@ -26,6 +27,8 @@ dest_dataset_valid_path = f'{dest_dataset_path}/valid'
 
 train_perc = args.train_perc
 
+batches_to_convert = [int(pos) for pos in args.batches_to_convert]  # starts from 1
+
 if not os.path.exists(dest_dataset_train_path):
 	os.mkdir(dest_dataset_train_path)
 
@@ -42,7 +45,6 @@ for folder in os.listdir(init_dataset_path):
 
 # start converting
 curr_batch = 0
-batches_to_convert = [6]  # starts from 1
 
 for batch_path in batch_paths:
 	curr_batch += 1
