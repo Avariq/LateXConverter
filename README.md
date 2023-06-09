@@ -128,4 +128,8 @@ Next step is to open ```LateXConverter\front\index.html``` file and use the UI t
 
 ## How to train YOLOv8
   
-In case you would want to train your own YOLOv8 model and afterward replace our ```bestYolov8.pt``` weights with your own just follow the notebook 
+In case you would want to train your own YOLOv8 model and afterwards replace our [bestYolov8.pt](LateXBackend/django_microproject/detection/bestYolov8.pt) weights with your own just follow this [Notebook](LateXBackend/Yolov8.ipynb)
+  
+## Examples
+  
+```Hint``` You can find the sample images [here]()
