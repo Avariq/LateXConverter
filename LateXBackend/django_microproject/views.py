@@ -1,5 +1,3 @@
-import html
-import json
 import os
 from django_microproject.detection import detection
 

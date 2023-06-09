@@ -2,12 +2,20 @@ import shutil
 import os
 import json
 
-init_dataset_path = 'D:/YOLOFormatConverter/AidaDS'
+init_dataset_path = 'D:/YOLOFormatConverter/AidaDS'  # absolute path to a folder with DS
 
 dest_dataset_path = 'D:/YOLOFormatConverter/AidaDSYolov8XS'
 dest_dataset_train_path = f'{dest_dataset_path}/train'
 dest_dataset_valid_path = f'{dest_dataset_path}/valid'
-dest_dataset_test_path = f'{dest_dataset_path}/test'
+
+train_perc = 0.8
+
+if not os.path.exists(dest_dataset_train_path):
+	os.mkdir(dest_dataset_train_path)
+
+if not os.path.exists(dest_dataset_valid_path):
+	os.mkdir(dest_dataset_valid_path)
+
 
 # forming batch paths
 
@@ -19,6 +27,7 @@ for folder in os.listdir(init_dataset_path):
 # start converting
 curr_batch = 0
 batches_to_convert = [6]  # starts from 1
+
 for batch_path in batch_paths:
 	curr_batch += 1
 
@@ -28,14 +37,15 @@ for batch_path in batch_paths:
 	with open(f'{batch_path}/JSON/kaggle_data_{batch_path.split("batch_")[1]}.json') as conf_file:
 		conf_dict = json.load(conf_file)
 
-	for idx in range(len(conf_dict)):
+	total_images_n = len(conf_dict)
+	train_n = total_images_n * train_perc
+
+	for idx in range(total_images_n):
 		print(f'Batch: {batch_path}. Progress: {((idx+1)/10000) * 100}%')
-		if idx < 8000:
+		if idx < train_n:
 			curr_dest_path = dest_dataset_train_path
-		elif 8000 <= idx < 9350:
-			curr_dest_path = dest_dataset_valid_path
 		else:
-			curr_dest_path = dest_dataset_test_path
+			curr_dest_path = dest_dataset_valid_path
 
 		image_width, image_height = conf_dict[idx]['image_data']['width'], conf_dict[idx]['image_data']['height']
 
